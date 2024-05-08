@@ -3,7 +3,11 @@
         id="app"
         :class="{dark: theme == 'dark'}"
     >
+    
+    <div v-show="$route.path !== '/login'&$route.path !== '/register'&$route.path !== '/forgot'">
         <navigation-view></navigation-view>
+    </div>
+        
         <div class="addition-container">
             <div class="global-container">
                 <keep-alive include="Home,Templates,Settings">
@@ -88,6 +92,9 @@ export default {
         this.i18nInit();
         this.refreshWindowSizeInit();
         if (this.$route.path !== '/') this.$Go('/');
+        // if(this.$store.state.User.info.id === null){
+        //     this.$Go('/login')
+        // }
     },
     methods: {
         ...mapMutations({

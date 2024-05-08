@@ -9,7 +9,11 @@
                 style="margin-top: 20px;"
             >{{local('Setting')}}</p>
         </div>
-        <user-profile @switch-block="show.login = true"></user-profile>
+
+        <!-- <user-profile @switch-block="show.login = true"></user-profile> -->
+        <user-profile @switch-block="$Go(`/login`)"></user-profile>
+
+        
         <div class="scroll-view">
             <fv-Collapse
                 :disabledCollapse="true"
@@ -348,16 +352,16 @@
             :theme="theme"
             @finished="configInit"
         ></add-ds>
-        <login-window v-model="show.login"></login-window>
+        <!-- <login-window v-model="show.login"></login-window> -->
     </div>
 </template>
 
 <script>
 import { mapMutations, mapState, mapGetters, mapActions } from 'vuex';
 import userProfile from './profile/userProfile.vue';
-import loginWindow from './login';
-import initDs from '@/components/settings/initDS.vue';
-import addDs from '@/components/settings/addDS.vue';
+// import loginWindow from './login';
+import initDs from '@/components/settings/initDs.vue';
+import addDs from '@/components/settings/addDs.vue';
 import dataPathItem from '@/components/settings/dataPathItem.vue';
 
 import OneDrive from '@/assets/settings/OneDrive.svg';
@@ -369,7 +373,7 @@ import { RemoteNotebookWatcher } from '@/js/eventManager.js';
 export default {
     components: {
         userProfile,
-        loginWindow,
+        // loginWindow,
         initDs,
         addDs,
         dataPathItem

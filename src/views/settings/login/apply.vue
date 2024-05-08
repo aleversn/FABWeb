@@ -22,7 +22,7 @@
                     background="whitesmoke"
                     :border-radius="6"
                     :theme="theme"
-                    style="width: 100%; max-width: 375px; min-height: 40px; margin-top: 15px; flex-shrink: 0;"
+                    class="text-box-style"
                     @keyup="handleEnter"
                 ></fv-text-box>
                 <fv-text-box
@@ -34,7 +34,7 @@
                     background="whitesmoke"
                     :border-radius="6"
                     :theme="theme"
-                    style="width: 100%; max-width: 375px; min-height: 40px; margin-top: 15px; flex-shrink: 0;"
+                    class="text-box-style"
                     @keyup="handleEnter"
                 ></fv-text-box>
                 <fv-button
@@ -69,7 +69,7 @@
         </div>
         <div
             class="s3"
-            @click="$emit('switch-block', 'login')"
+            @click="$Go(`/login`)"
         >
             <p>{{local('Already have an account? Log in')}}</p>
         </div>
@@ -243,6 +243,20 @@ export default {
                 }
             }
         }
+    }
+}
+.text-box-style{
+    width: 100%; 
+    max-width: 375px; 
+    height: 40px; 
+    margin-top: 15px; 
+    flex-shrink: 0;
+}
+@media (max-width:360px) {
+    .text-box-style{
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
     }
 }
 </style>

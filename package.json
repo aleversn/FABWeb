@@ -6,14 +6,14 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "api:local": "api-cli get http://59.77.134.155:5080/v3/api-docs -d ./src/api/remote"
+        "api": "api-cli get http://59.77.134.42:5084/v3/api-docs -d ./src/api/"
     },
     "license": "MIT",
     "dependencies": {
         "@creatorsn/powereditor": "^2.4.8",
         "axios": "^0.21.4",
         "axios-swagger-helper": "^0.0.53",
-        "core-js": "^3.6.5",
+        "core-js": "^3.36.1",
         "cropperjs": "^1.5.13",
         "diff": "^5.1.0",
         "gsap": "^3.10.4",
@@ -24,6 +24,7 @@
         "vfluentdesign": "^1.2.50",
         "vue": "^2.6.11",
         "vue-axios": "^3.3.7",
+        "vue-loader": "^17.4.2",
         "vue-router": "^3.4.9",
         "vuex": "^3.6.0"
     },

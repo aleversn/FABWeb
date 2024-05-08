@@ -124,6 +124,7 @@
             :local="local"
             :translateObj="translateObj"
             :ctrlEnterTranslate="ctrlEnterTranslate"
+            @send-choice='changChoice'
         ></translator-box>
     </div>
 </template>
@@ -138,6 +139,7 @@ import addRingButton from './addRingButton.vue';
 import translatorBox from '@/components/general/pdfViewer/translatorBox.vue';
 
 import 'pdfjs-dist/web/pdf_viewer.css';
+import axios from 'axios';
 
 export default {
     components: {
@@ -155,6 +157,7 @@ export default {
     },
     data() {
         return {
+            choice:"youdao",
             currentPage: 1,
             currentPageStr: '1',
             totalPages: 0,
@@ -343,6 +346,9 @@ export default {
         ...mapMutations({
             reviseEditor: 'reviseEditor'
         }),
+        changChoice(choice){
+            this.choice=choice
+        },
         timerInit() {
             // PDFViewer 定位刷新器 10ms (PDFViewer position refresher 10ms)
             this.timer.width = setInterval(() => {
@@ -633,7 +639,28 @@ export default {
             result.push(end);
             return result;
         },
-        toTranslate(period = 500) {
+        toTranslate(period = 500){
+            clearTimeout(this.timer.translate);
+            this.timer.translate = setTimeout(() => {
+                axios.get('/translate/'+this.choice, {
+                    baseURL: 'http://59.77.134.42:5084',
+                    params: {
+                        text: this.translateObj.selection
+                    }
+                })
+                    .then((response) =>{
+                        this.translateObj.text=response.data.data;
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .finally(function () {
+                        // 总是会执行
+                    });
+            },period);
+        },
+        /*toTranslate(period = 500) {
             clearTimeout(this.timer.translate);
             this.timer.translate = setTimeout(() => {
                 if (this.translateObj.selection !== '') {
@@ -649,7 +676,7 @@ export default {
                     });
                 }
             }, period);
-        },
+        },*/
         ctrlEnterTranslate(event) {
             if (!(event.keyCode === 13 && event.ctrlKey)) return;
             this.toTranslate();

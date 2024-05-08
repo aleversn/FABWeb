@@ -1,7 +1,10 @@
-version: '3'
+version: '3.7'
+
 services:
-  web:
+  web-1:
     build: .
     ports:
-      - "60080:80"
+      - "60081:80"
     restart: always
+    
+  
