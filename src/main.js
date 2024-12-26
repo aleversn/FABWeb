@@ -65,7 +65,7 @@ new Vue({
             return this.$SDate.Format("YYYY-mm-dd HH:MM", date);
         }
         if (isdev) {
-            Vue.prototype.$server = "http://59.77.134.18:5083";
+            Vue.prototype.$server = "http://100.64.0.26:5083";
         } else {
             Vue.prototype.$server = `https://fb.creatorsn.com/api`;
         }
