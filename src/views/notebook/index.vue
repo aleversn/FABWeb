@@ -355,6 +355,7 @@ export default {
         return {
             path: '',
             remotePath: '',
+            shouldRefresh: true, // for first time watch currentDataPath
             storeContent: '',
             contentType: '', // json, html, fabulous_notebook
             docInfo: {
@@ -439,6 +440,13 @@ export default {
         },
         editorShowNav(val) {
             this.showNav = val;
+        },
+        currentDataPath (val) {
+            if (val && this.shouldRefresh) {
+                this.shouldRefresh = false; // 重置标志位
+                this.refreshContent(); // 执行刷新
+                this.getRemotePath();
+            }
         }
     },
     computed: {
@@ -618,6 +626,7 @@ export default {
         async refreshContent() {
             if (!this.path) return;
             if (!this.lock.loading) return;
+            if (!this.currentDataPath) return;
             this.lock.loading = false;
             this.fabulousNotebook.banner = null;
             await this.Auto.NotebookController.getDocument(
