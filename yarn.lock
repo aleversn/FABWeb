@@ -988,10 +988,10 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@creatorsn/powereditor@^2.4.8":
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/@creatorsn/powereditor/-/powereditor-2.4.8.tgz#127e5484606be1513999a8d77a499a5ee66eed37"
-  integrity sha512-wPqagaOvQvQ/2B84pcxbh3fHyj7vF3SQl+s4FEEx/HLxehQb7izgafvl4BhB+ADYupctcvA74hniFxQzdNoFkQ==
+"@creatorsn/powereditor@^2.4.10":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@creatorsn/powereditor/-/powereditor-2.4.10.tgz#a21aebcae8f58c4cda133cd0b1384506b0e3752f"
+  integrity sha512-nPr8A3bR88JZQmB8vW/JSQnCII8+P3ggrE0mjy8MaiAO/cisInBwtkrDg4MABqU790HsKmyoIV2YwcpWJZ+oAw==
   dependencies:
     "@tiptap/core" "2.3.0"
     "@tiptap/extension-bubble-menu" "2.3.0"
@@ -1026,7 +1026,7 @@
     markdown-it-sub "^1.0.0"
     markdown-it-sup "^1.0.0"
     simplify-js "^1.2.4"
-    vfluentdesign "1.2.47"
+    vfluentdesign "1.2.51"
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -10110,10 +10110,10 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vfluentdesign@1.2.47:
-  version "1.2.47"
-  resolved "https://registry.yarnpkg.com/vfluentdesign/-/vfluentdesign-1.2.47.tgz#10e8418b5a67e99fa2168638b78e9176ba17e526"
-  integrity sha512-qkDkUWwhZl1+973ieiRlmriV0QuXmDt9CcpXEY+uh40bQq9fZ1uxfKdqsOIVojCrpj5RBYgRterNWnpLPT0b6A==
+vfluentdesign@1.2.51:
+  version "1.2.51"
+  resolved "https://registry.yarnpkg.com/vfluentdesign/-/vfluentdesign-1.2.51.tgz#58138bcf929e8a152988db096f8e9dd2fd00b784"
+  integrity sha512-hvqNRejZHXF3u/D9Tm0DDvAzi1GqQLx63S1uwyYIOOsXKYP0FTUiqyv2ke2B14UQSJR4eIoZmTER189ige9Z3Q==
   dependencies:
     core-js "3.31.1"
     gsap "3.1.1"
