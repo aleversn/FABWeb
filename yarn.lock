@@ -988,10 +988,10 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@creatorsn/powereditor@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@creatorsn/powereditor/-/powereditor-2.5.0.tgz#012ccb5d9fde90c76d413da4ceca83297387d7a4"
-  integrity sha512-NRtdqlZbGISNtoE+bU/mADEZnggGaK9Cp8UxEV76hMhmzTw/usSgs+YKPlLiVYZIH/5XUAk9HW0QZ6NUwjbpJg==
+"@creatorsn/powereditor@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@creatorsn/powereditor/-/powereditor-2.5.1.tgz#a717fcc07d41d3bf61fd1f4060fbe00c92aaf10e"
+  integrity sha512-mN0laSdCfn0hnBHMHzf8+cV9IQwiYGEKKr2xEgmn6dO1zwnkgxaGIMoZ876yeKhDy146o4vhSZOwrb7h5uGo7g==
   dependencies:
     "@tiptap/core" "2.3.0"
     "@tiptap/extension-bubble-menu" "2.3.0"
