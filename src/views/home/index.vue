@@ -212,7 +212,7 @@
                                 <p class="sec">{{$date(page.createDate)}}</p>
                                 <fv-button
                                     theme="dark"
-                                    :background="theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(0, 98, 158, 1)'"
+                                    :background="theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(140, 148, 228, 1)'"
                                     style="width: 35px; height: 35px;"
                                     :title="local('Rename')"
                                     :is-box-shadow="true"
@@ -222,7 +222,7 @@
                                 </fv-button>
                                 <fv-button
                                     theme="dark"
-                                    :background="theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(0, 98, 158, 1)'"
+                                    :background="theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(140, 148, 228, 1)'"
                                     style="width: 35px; height: 35px;"
                                     :title="local('Duplicate')"
                                     :is-box-shadow="true"
@@ -291,7 +291,7 @@
                             <span @click="show.folder = true">
                                 <i
                                     class="ms-Icon ms-Icon--FabricMovetoFolder"
-                                    :style="{color: theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(0, 90, 158, 1)'}"
+                                    :style="{color: theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(140, 148, 228, 1)'}"
                                 ></i>
                                 <p>{{local("Induce to Partitions")}}</p>
                             </span>
@@ -305,7 +305,7 @@
                             <span @click="show.rename = true">
                                 <i
                                     class="ms-Icon ms-Icon--Rename"
-                                    :style="{color: theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(0, 90, 158, 1)'}"
+                                    :style="{color: theme === 'dark' ? 'rgba(118, 185, 237, 1)' : 'rgba(140, 148, 228, 1)'}"
                                 ></i>
                                 <p>{{local("Rename Item")}}</p>
                             </span>
@@ -404,7 +404,7 @@ export default {
                     iconColor: () =>
                         this.theme === 'dark'
                             ? 'rgba(118, 185, 237, 1)'
-                            : 'rgba(0, 90, 158, 1)',
+                            : 'rgba(140, 148, 228, 1)',
                     disabled: () => this.SourceDisabled || !this.lock,
                     func: () => {
                         this.show.add = true;
@@ -416,7 +416,7 @@ export default {
                     iconColor: () =>
                         this.theme === 'dark'
                             ? 'rgba(118, 185, 237, 1)'
-                            : 'rgba(0, 90, 158, 1)',
+                            : 'rgba(140, 148, 228, 1)',
                     disabled: () => this.SourceDisabled || !this.lock,
                     func: this.importPdf
                 },
@@ -430,7 +430,7 @@ export default {
                     iconColor: () =>
                         this.theme === 'dark'
                             ? 'rgba(118, 185, 237, 1)'
-                            : 'rgba(0, 90, 158, 1)',
+                            : 'rgba(140, 148, 228, 1)',
                     disabled: () => this.SourceDisabled || !this.lock,
                     func: () => {
                         this.editable ^= true;
@@ -443,7 +443,7 @@ export default {
                     iconColor: () =>
                         this.theme === 'dark'
                             ? 'rgba(118, 185, 237, 1)'
-                            : 'rgba(0, 90, 158, 1)',
+                            : 'rgba(140, 148, 228, 1)',
                     disabled: () =>
                         this.currentChoosen.length === 0 || !this.lock,
                     func: () => {
@@ -993,7 +993,7 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(245, 245, 245, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1001,7 +1001,7 @@ export default {
     z-index: 1;
 
     &.dark {
-        background: rgba(36, 36, 36, 0.9);
+        background: rgba(20, 20, 20, 0.9);
 
         .s-title {
             color: whitesmoke;
@@ -1010,7 +1010,7 @@ export default {
         .m-home-block {
             .row {
                 &.main-table {
-                    background: rgba(0, 0, 0, 0.6);
+                    background: rgba(20, 20, 20, 0.6);
                 }
 
                 .row-item-info {

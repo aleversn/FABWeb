@@ -1,13 +1,9 @@
 <template>
-    <div
-        class="settings-container"
-        :class="[{dark: theme === 'dark'}]"
-    >
+    <div class="settings-container" :class="[{ dark: theme === 'dark' }]">
         <div class="s-row">
-            <p
-                class="s-title"
-                style="margin-top: 20px;"
-            >{{local('Setting')}}</p>
+            <p class="s-title" style="margin-top: 20px">
+                {{ local('Setting') }}
+            </p>
         </div>
         <user-profile @switch-block="show.login = true"></user-profile>
         <div class="scroll-view">
@@ -17,23 +13,29 @@
                 :icon="'StorageTape'"
                 :title="local('Source')"
                 :content="local('Add New Source')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 35px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 35px;
+                "
             >
                 <template v-slot:extension>
                     <fv-button
                         :theme="theme"
                         icon="OneDriveAdd"
                         :is-box-shadow="true"
-                        style="width: 150px;"
+                        style="width: 150px"
                         @click="addSource"
-                    >{{local('Add New Source')}}</fv-button>
+                        >{{ local('Add New Source') }}</fv-button
+                    >
                     <fv-button
                         :theme="theme"
                         icon="Link"
                         :is-box-shadow="true"
-                        style="width: 150px; margin-left: 5px;"
+                        style="width: 150px; margin-left: 5px"
                         @click="linkSource"
-                    >{{local('Link Exists Source')}}</fv-button>
+                        >{{ local('Link Exists Source') }}</fv-button
+                    >
                 </template>
             </fv-Collapse>
             <div class="s-item-block">
@@ -42,10 +44,14 @@
                     :theme="theme"
                     :rowHeight="60"
                     :header-foreground="'rgba(140, 148, 228, 1)'"
-                    :choosen-background="theme === 'dark' ? 'rgba(120, 120, 120, 0.3)' : 'rgba(255, 255, 255, 0.6)'"
+                    :choosen-background="
+                        theme === 'dark'
+                            ? 'rgba(120, 120, 120, 0.3)'
+                            : 'rgba(255, 255, 255, 0.6)'
+                    "
                     :showSlider="true"
                     ref="listView"
-                    style="width: 100%; height: auto; margin-top: 15px;"
+                    style="width: 100%; height: auto; margin-top: 15px"
                 >
                     <template v-slot:listItem="x">
                         <data-path-item
@@ -64,8 +70,14 @@
                 :theme="theme"
                 :icon="'Color'"
                 :title="local('Theme')"
-                :content="theme === 'light' ? `${local('Light')}` : `${local('Dark')}`"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 15px;"
+                :content="
+                    theme === 'light' ? `${local('Light')}` : `${local('Dark')}`
+                "
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 15px;
+                "
             >
                 <template v-slot:extension>
                     <fv-button
@@ -73,13 +85,21 @@
                         fontSize="16"
                         borderRadius="50"
                         :is-box-shadow="true"
-                        style="width: 40px; height: 40px;"
-                        :title="theme === 'light' ? `${local('Switch to the dark theme')}` : `${local('Switch to the light theme')}`"
+                        style="width: 40px; height: 40px"
+                        :title="
+                            theme === 'light'
+                                ? `${local('Switch to the dark theme')}`
+                                : `${local('Switch to the light theme')}`
+                        "
                         @click="toggleTheme"
                     >
                         <i
                             class="ms-Icon"
-                            :class="[`ms-Icon--${theme === 'light' ? 'Sunny' : 'ClearNight'}`]"
+                            :class="[
+                                `ms-Icon--${
+                                    theme === 'light' ? 'Sunny' : 'ClearNight'
+                                }`
+                            ]"
                         ></i>
                     </fv-button>
                 </template>
@@ -90,7 +110,11 @@
                 :icon="'LocaleLanguage'"
                 :title="local('Language')"
                 :content="local('Choose A Language')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-Combobox
@@ -98,8 +122,10 @@
                         :theme="theme"
                         :options="languages"
                         :placeholder="local('Choose A Language')"
-                        :background="theme === 'dark' ? 'rgba(36, 36, 36, 1)' : ''"
-                        style="width: 120px;"
+                        :background="
+                            theme === 'dark' ? 'rgba(36, 36, 36, 1)' : ''
+                        "
+                        style="width: 120px"
                         @choose-item="chooseLanguage"
                     ></fv-Combobox>
                 </template>
@@ -110,7 +136,11 @@
                 :icon="'Manage'"
                 :title="local('System Mode')"
                 :content="local('Switch System Mode')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-Combobox
@@ -118,8 +148,10 @@
                         :theme="theme"
                         :options="active_system_modes"
                         :placeholder="local('Choose A Mode')"
-                        :background="theme === 'dark' ? 'rgba(36, 36, 36, 1)' : ''"
-                        style="width: 120px;"
+                        :background="
+                            theme === 'dark' ? 'rgba(36, 36, 36, 1)' : ''
+                        "
+                        style="width: 120px"
                         @choose-item="chooseSystemMode"
                     ></fv-Combobox>
                 </template>
@@ -130,7 +162,11 @@
                 :icon="'Save'"
                 :title="local('Auto Save')"
                 :content="local('Auto Save')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-toggle-switch
@@ -140,6 +176,7 @@
                         :off="local('Turn On Auto Save')"
                         :onForeground="theme === 'dark' ? '#fff' : '#000'"
                         :offForeground="theme === 'dark' ? '#fff' : '#000'"
+                        :switch-on-background="'rgba(140, 148, 228, 1)'"
                     >
                     </fv-toggle-switch>
                 </template>
@@ -147,10 +184,18 @@
             <fv-Collapse
                 :disabledCollapse="true"
                 :theme="theme"
-                :icon="editor_expand_content ? 'StaplingLandscapeTwoTop' : 'StaplingPortraitBookBinding'"
+                :icon="
+                    editor_expand_content
+                        ? 'StaplingLandscapeTwoTop'
+                        : 'StaplingPortraitBookBinding'
+                "
                 :title="local('Editor Content Expand')"
                 :content="local('Switch Editor Content Expand')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-toggle-switch
@@ -160,6 +205,7 @@
                         :off="local('Collaspe Mode')"
                         :onForeground="theme === 'dark' ? '#fff' : '#000'"
                         :offForeground="theme === 'dark' ? '#fff' : '#000'"
+                        :switch-on-background="'rgba(140, 148, 228, 1)'"
                     >
                     </fv-toggle-switch>
                 </template>
@@ -170,7 +216,11 @@
                 :icon="'ButtonMenu'"
                 :title="local('Show Navigation')"
                 :content="local('Show Navigation on Editor')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-toggle-switch
@@ -180,6 +230,7 @@
                         :off="local('Hide Navigation')"
                         :onForeground="theme === 'dark' ? '#fff' : '#000'"
                         :offForeground="theme === 'dark' ? '#fff' : '#000'"
+                        :switch-on-background="'rgba(140, 148, 228, 1)'"
                     >
                     </fv-toggle-switch>
                 </template>
@@ -191,7 +242,11 @@
                 :icon="'SpecialEffectSize'"
                 :title="local('Dynamic Effect')"
                 :content="local('Dynamic Effect Background')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-toggle-switch
@@ -201,6 +256,7 @@
                         :off="local('Dynamic Effect OFF')"
                         :onForeground="theme === 'dark' ? '#fff' : '#000'"
                         :offForeground="theme === 'dark' ? '#fff' : '#000'"
+                        :switch-on-background="'rgba(140, 148, 228, 1)'"
                     >
                     </fv-toggle-switch>
                 </template>
@@ -213,7 +269,11 @@
                 :icon="'ImageExport'"
                 :title="local('Dynamic Effect Theme Color')"
                 :content="local('Pick Theme Color from Image')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <input
@@ -226,15 +286,17 @@
                     <fv-button
                         :theme="theme"
                         :is-box-shadow="true"
-                        style="width: 120px;"
+                        style="width: 120px"
                         @click="$refs.input.click()"
                     >
-                        {{local('Pick from Image')}}
+                        {{ local('Pick from Image') }}
                     </fv-button>
                 </template>
                 <template v-slot:content="x">
                     <div class="collapse-info">
-                        <p v-show="themeColorList.length === 0">{{ x.content }}</p>
+                        <p v-show="themeColorList.length === 0">
+                            {{ x.content }}
+                        </p>
                         <div
                             v-show="themeColorList.length > 0"
                             class="theme-color-label-block"
@@ -243,14 +305,18 @@
                                 v-for="(item, index) in themeColorList"
                                 :key="`color: ${index}`"
                                 class="theme-color-label-item-sample"
-                                :style="{background: `rgba(${item.color.join(', ')}, 0.8)`}"
+                                :style="{
+                                    background: `rgba(${item.color.join(
+                                        ', '
+                                    )}, 0.8)`
+                                }"
                             ></p>
                             <fv-button
                                 :theme="theme"
                                 :border-radius="50"
                                 :font-size="12"
                                 :is-box-shadow="true"
-                                style="width: 20px; height: 20px;"
+                                style="width: 20px; height: 20px"
                                 @click="shuffleThemeColorList"
                             >
                                 <i class="ms-Icon ms-Icon--Shuffle"></i>
@@ -265,8 +331,16 @@
                 :theme="theme"
                 :icon="'Diagnostic'"
                 :title="local('Watch All Files')"
-                :content="local('Switch whether to watch all extension files on Notebook system')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                :content="
+                    local(
+                        'Switch whether to watch all extension files on Notebook system'
+                    )
+                "
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-toggle-switch
@@ -276,6 +350,7 @@
                         :off="local('OFF')"
                         :onForeground="theme === 'dark' ? '#fff' : '#000'"
                         :offForeground="theme === 'dark' ? '#fff' : '#000'"
+                        :switch-on-background="'rgba(140, 148, 228, 1)'"
                     >
                     </fv-toggle-switch>
                 </template>
@@ -286,16 +361,20 @@
                 :icon="'DeveloperTools'"
                 :title="local('Dev Tools')"
                 :content="local('Dev Tools for Developer')"
-                style="width: calc(100% - 15px); max-width: 1280px; margin-top: 3px;"
+                style="
+                    width: calc(100% - 15px);
+                    max-width: 1280px;
+                    margin-top: 3px;
+                "
             >
                 <template v-slot:extension>
                     <fv-button
                         :theme="theme"
                         :is-box-shadow="true"
-                        style="width: 120px;"
+                        style="width: 120px"
                         @click="$Go('/dev')"
                     >
-                        {{local('Dev Page')}}
+                        {{ local('Dev Page') }}
                     </fv-button>
                 </template>
             </fv-Collapse>
@@ -678,7 +757,7 @@ export default {
     transition: all 0.3s;
 
     &.dark {
-        background: rgba(36, 36, 36, 0.9);
+        background: rgba(10, 10, 10, 0.95);
 
         .s-title {
             color: whitesmoke;
@@ -738,7 +817,7 @@ export default {
                 position: relative;
                 width: 100%;
                 padding-left: 5px;
-                border-left: rgba(0, 98, 158, 0) solid 5px;
+                border-left: rgba(140, 148, 228, 0) solid 5px;
                 border-radius: 3px;
                 display: flex;
                 align-items: center;
@@ -748,7 +827,7 @@ export default {
                 }
 
                 &.choosen {
-                    border-color: rgba(0, 98, 158, 0.6);
+                    border-color: rgba(140, 148, 228, 0.6);
                 }
 
                 .icon-img {

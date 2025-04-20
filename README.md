@@ -56,3 +56,25 @@ Then you can visit the website at `http://<host>:<port>`.
     <local-tree-view
                         v-if="false"
     ```
+
+2. Settings
+
+- **location**: ``
+
+- **operation**:
+  - `v-if="false"` `updater` in `fv-collapse`
+  - Use `import { RemoteNotebookWatcher } from '@/js/eventManager.js';` to replace `import { NotebookWatcher } from '@/js/eventManager.js';`
+  - Use `nw: new RemoteNotebookWatcher(),` to replace `nw: new NotebookWatcher(),`
+  - Comment
+    ```javascript
+    eventInit() {
+        // this.nw.on('updater-callback', (event, { status, info }) => {
+        //     this.updater.status = status;
+        //     if (status === 'latest')
+        //         this.updater.version = info.releaseName;
+        //     if (status === 'loading')
+        //         this.updater.downloadPercent = info.percent.toFixed(0);
+        //     console.log({ status, info });
+        // });
+    },
+    ```
