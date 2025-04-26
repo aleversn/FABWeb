@@ -199,12 +199,13 @@ export class MetadataUpdateDTO {
      * @param {String} chapter 
      * @param {String} pages 
      * @param {String} school 
+     * @param {String} bibtex 
      * @param {String} note 
-     * @param {String} doi 
      * @param {String} issn 
+     * @param {String} doi 
      * @param {String} abstract 
      */ 
-    constructor(id = undefined,publisher = undefined,DOI = undefined,year = undefined,createDate = undefined,source = undefined,title = undefined,url = undefined,containerTitle = undefined,ISSN = undefined,language = undefined,chapter = undefined,pages = undefined,school = undefined,note = undefined,doi = undefined,issn = undefined,abstract = undefined){
+    constructor(id = undefined,publisher = undefined,DOI = undefined,year = undefined,createDate = undefined,source = undefined,title = undefined,url = undefined,containerTitle = undefined,ISSN = undefined,language = undefined,chapter = undefined,pages = undefined,school = undefined,bibtex = undefined,note = undefined,issn = undefined,doi = undefined,abstract = undefined){
         this.id = id
         this.publisher = publisher
         this.DOI = DOI
@@ -219,9 +220,10 @@ export class MetadataUpdateDTO {
         this.chapter = chapter
         this.pages = pages
         this.school = school
+        this.bibtex = bibtex
         this.note = note
-        this.doi = doi
         this.issn = issn
+        this.doi = doi
         this.abstract = abstract
     }
        
@@ -299,17 +301,22 @@ export class MetadataUpdateDTO {
      * 
      * @type {String}
      */
+    bibtex=undefined   
+    /**
+     * 
+     * @type {String}
+     */
     note=undefined   
     /**
      * 
      * @type {String}
      */
-    doi=undefined   
+    issn=undefined   
     /**
      * 
      * @type {String}
      */
-    issn=undefined   
+    doi=undefined   
     /**
      * 
      * @type {String}
@@ -848,6 +855,23 @@ export class DataItemCreateDTO {
     labels=undefined
     
 }
+export class FormFileUpload {
+  
+    /**
+     *
+     * @param {String} file 
+     */ 
+    constructor(file = undefined){
+        this.file = file
+    }
+       
+    /**
+     * 
+     * @type {String}
+     */
+    file=undefined
+    
+}
 export class DataPageCreateDTO {
   
     /**
@@ -925,6 +949,23 @@ export class PartitionCreateDTO {
      * @type {String}
      */
     emoji=undefined
+    
+}
+export class Base64ImageRequest {
+  
+    /**
+     *
+     * @param {String} base64 要上传的Base64图片
+     */ 
+    constructor(base64 = undefined){
+        this.base64 = base64
+    }
+       
+    /**
+     * 要上传的Base64图片
+     * @type {String}
+     */
+    base64=undefined
     
 }
 export class ConfigCreateOrUpdateDTO {
