@@ -10,7 +10,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@creatorsn/powereditor": "^2.5.2",
+        "@creatorsn/powereditor": "^2.5.7",
         "axios": "^0.21.4",
         "axios-swagger-helper": "^0.0.53",
         "bibtex-parser": "^0.0.0",
